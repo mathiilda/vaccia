@@ -1,0 +1,16 @@
+DROP USER IF EXISTS 'user'@'%';
+
+CREATE USER 'user'@'%'
+IDENTIFIED
+BY 'pass'
+;
+
+GRANT ALL PRIVILEGES
+ON *.*
+TO 'user'@'%'
+WITH GRANT OPTION
+;
+
+CREATE DATABASE IF NOT EXISTS vaccia;
+
+USE vaccia;

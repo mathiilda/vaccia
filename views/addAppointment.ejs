@@ -1,0 +1,23 @@
+<%- include("header"); %>
+<div class="userContainer formsContainer">
+    <h1>Add appointment</h1>
+    <p class="introText">A reminder will be sent to you by email three days prior your appointment. The reminder will be sent at the same time as the appointment will take place.</p>
+    <% if (error) { %>
+        <div class="error">
+            <p>Something went wrong. Try again.</p>
+        </div>
+    <% } %>
+    <form action="/user/addAppointment" method="POST"><br>
+        <p>Booked vaccine:</p>
+        <select name="name" required>
+            <% for (let row of vaccinations) { %>
+                <option value="<%= row.name %>"><%= row.name %></option>
+            <% } %>
+        </select><br><br>
+        <p>Appointment date/time:</p>
+        <input type="datetime-local" name="date" required><br><br>
+        <input type="submit" value="Add appointment">
+    </form>
+</div>
+
+<%- include("footer"); %>

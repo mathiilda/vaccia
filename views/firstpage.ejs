@@ -1,0 +1,71 @@
+<%- include("header"); %>
+
+<div class="frontContainer">
+    
+<% if (first) { %>
+    <div class="first">
+        <h1>Hello and welcome to Vaccia!</h1>
+        <p>To see your user-information press the user-icon in the right upper corner. If you have questions, scroll down and you will find our Vaccia blog filled with answers about vaccines and vaccinations.</p>
+    </div>
+<% } %>
+    <div class="top">
+        <div class="recentlyVaccinated">
+            <h1>Did you recently get vaccinated?</h1>
+            <p>
+                <a href="/user/addVaccine">ADD VACCINATION</a>
+            </p>
+        </div>
+        <div class="bookedAppointmentsContainer">
+            <h1>BOOKED APPOINTMENTS</h1>
+            <% if (appointments.length == 0) {%>
+                <p style="color:whitesmoke">Whops! No appointments here.</p>
+            <% } else {%>
+            <table>
+                <tr>
+                    <th class="left">Vaccination</th>
+                    <th class="center">Date & Time</th>
+                    <th class="right">Who</th>
+                </tr>
+            <% for (row of appointments) { %>
+                <tr>
+                    <td class="left"><%= row.vaccName %></td>
+                    <td class="center"><%= row.dateTaken.toLocaleString().slice(0, -3) %></td>
+                    <td class="right"><%= row.userName %></td>
+                </tr>
+            <% }} %>
+            </table>
+        </div>
+    </div>
+    <div class="bottom">
+        <h1>THE VACCIA BLOG</h1>
+        <p>At our blog we answer common questions. Check out our posts down below!</p>
+        <div class="blogContainer">
+            <div>
+                <a href="blog/vaccinateChild">
+                    <img src="../img/vacc1Square.jpeg" alt="">
+                    <p>Should you vaccinate your child?</p>
+                </a>
+            </div>
+            <div>
+                <a href="blog/vaccinatePregnant">
+                    <img src="../img/vacc3.jpg" alt="">
+                    <p>Can I get vaccinated while pregnant?</p>
+                </a>
+            </div>
+            <div>
+                <a href="blog/vaccinatePet">
+                    <img src="../img/winston.jpg" alt="">
+                    <p>Can and should I vaccinate my pet?</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include("footer"); %>
+<!-- 
+<% if (first) { %>
+    <script>
+        window.alert("Hello and welcome to Vaccia!\n\nThe see your user-information press the user-icon in the right upper corner.\nIf you have questions, scroll down and you will find our Vaccia blog.\nBest regards,\n\nThe Vaccia Team");
+    </script>
+<% } %> -->

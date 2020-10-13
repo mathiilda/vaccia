@@ -1,0 +1,16 @@
+<%- include("header"); %>
+<div class="userContainer formsContainer">
+    <h1>Add vaccination</h1>
+    <p class="introText">First select the vaccine you have taken and then select the date you took the vaccine.</p><br><br>
+    <form action="/user/addVaccine" method="POST">
+        <select name="vaccine" required>
+            <% for (let row of vaccinations) { %>
+                <option value="<%= row.name %>"><%= row.name %></option>
+            <% } %>
+        </select><br><br>
+        <input type="date" name="date" required><br><br>
+        <input type="submit" value="Add vaccination">
+    </form>
+</div>
+
+<%- include("footer"); %>

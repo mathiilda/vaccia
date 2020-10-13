@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaccia</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../style/beforeIndex.css">
+    <link rel="icon" href="/img/logo2.jpg">
+</head>
+<body class="index-sign">
+    <div class="container">
+        <% if (error) { %>
+            <div class="error">
+                <p>The email or password is incorrect.</p>
+            </div>
+        <% } %>
+        <h1>Sign in to Vaccia</h1>
+        <div class="box">
+            <form action="/signIn" method="POST">
+                <h3>Your email:</h3>
+                <input type="email" name=email required><br>
+                <h3>Your password:</h3>
+                <input type="password" name="pass" minlength="6" maxlength="30" required><br><br>
+                <input type="submit" value="Sign in">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

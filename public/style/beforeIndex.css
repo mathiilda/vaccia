@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+html {
+    background-color: #262626;
+}
+
+.index {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.signIn {
+    display: flex;
+    float: right;
+    font-size: 1.5em;
+}
+
+a {
+    font-family: 'Abril Fatface', cursive;
+    background-color: #CEEDFF;
+    color: #262626;
+    text-decoration: none;
+    padding: 0.5em;
+    border-radius: 5%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.signIn a {
+    margin: auto 1em;
+}
+
+a:hover {
+    background-color: #bce6ff;
+}
+
+h1 {
+    font-family:'Abril Fatface', cursive;
+    font-weight: lighter;
+    text-align: center;
+    font-size: 2.2em;
+}
+
+p {
+    font-family: 'Abel', sans-serif;
+}
+
+.welcome {
+    padding-top: 15%;
+    text-align: center;
+}
+
+.welcome p {
+    text-align: center;
+    width: 60%;
+    margin: 1.5em auto;
+    line-height: 1.5em;
+    font-size: 1.2em;
+}
+
+.welcome a {
+    font-size: 1.5em;
+}
+
+.container {
+    margin: 10% auto;
+    width: 30%;
+}
+
+.error {
+    background-color: rgb(226, 54, 54);
+    text-align: center;
+    padding: 1em;
+    font-weight: bolder;
+}
+
+.box {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: whitesmoke;
+    color: #262626;
+    padding: 1em 0;
+}
+
+.box input {
+    text-align: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+    height: 2em;
+}
+
+input {
+    width: 100%;
+    margin: 0 auto 1em;
+    text-align: center;
+}
+
+h3 {
+    margin-bottom: 0.5em;
+    text-align: left;
+    font-family: 'Abel', sans-serif;
+    color: #262626;
+}
+
+form {
+    margin: 1em auto;
+    width: 60%;
+}
+
+input[type=submit] {
+    background-color: #CEEDFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+    font-family:'Abril Fatface', cursive;
+    font-size: 1.5em;
+    padding: 0.5em 0;
+    border-radius: 5%;
+}
+
+.index-sign h1 {
+    color: whitesmoke;
+}
+
+@media (max-width: 1100px) {
+    .container {
+        width: 50%;
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        width: 70%;
+    }
+}
+
+@media (max-width: 570px) {
+    .welcome {
+        padding-top: 10em;
+    }
+
+    .welcome p {
+        width: 80%;
+    }
+}
+
+@media (max-width: 450px) {
+    .container {
+        width: 90%;
+    }
+}

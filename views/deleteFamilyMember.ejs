@@ -1,0 +1,10 @@
+<%- include("header"); %>
+<div class="userContainer formsContainer">
+    <h1>Delete family-member</h1><br>
+    <form action="/user/deleteFamilyMember" method="POST">
+        <input type="text" value="<%= username %>" readonly><br><br>
+        <input type="submit" value="Delete">
+    </form>
+</div>
+
+<%- include("footer"); %>

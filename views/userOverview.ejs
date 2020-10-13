@@ -1,0 +1,101 @@
+<%- include("header"); %>
+
+<div class="userContainer">
+    <div class="header headerOver">
+        <div class="infoUser">
+            <% if (role == "cat" || role == "dog") { %>
+                <span class="material-icons">pets</span>
+            <% } else { %>
+                <span class="material-icons">perm_identity</span>
+            <% } %>
+            <div>
+                <form action="/user/changeUser" method="POST">
+                    <select name="selectedUser" onchange="this.form.submit()">
+                        <option value=""><%= username %></option>
+                        <% for (row of family) { %>
+                            <option value="<%= row.name %>"><%= row.name %></option>
+                        <% } %>
+                    </select>
+                </form>
+                <p>Email: <%= email %></p>
+                <p>Born: <%= birthday %></p>
+            </div>
+        </div>
+        <div class="links">
+            <div class="dropdown">
+                <div class="dropHover">User-options</div>
+                <div class="dropdown-content">
+                    <a class="link" href="/user/addFamilyMember">Add family member</a>
+                    <% if (username != admin) { %>
+                    <a class="link" href="/user/deleteFamilyMember">Delete family member</a>
+                    <% } %>
+                </div>
+            </div>
+            <div>
+                <a class="link" href="/user/signOut">Sign out</a>
+            </div>
+        </div>
+    </div>
+    <div class="header noBorder">
+        <h1>My vaccinations</h1>
+        <div>
+            <p>
+                <a class="link" href="/user/addVaccine">Add vaccination</a>
+            </p>
+        </div>
+    </div>
+    <% if (myVaccinations.length == 0) {%>
+        <p>Whops! No vaccinations here.</p>
+    <% } else {%>
+    <table>
+        <tr>
+            <th class="left">Name</th>
+            <th class="center">Date</th>
+            <th class="right">Delete</th>
+        </tr>
+    <% for (row of myVaccinations) { %>
+        <tr>
+            <td class="left"><%= row.vaccName %></td>
+            <td class="center"><%= row.dateTaken.toLocaleString().slice(0, -10) %></td>
+            <td class="right">
+                <a class="trash" href="/user/deleteVaccination?vacc=<%= row.vaccName%>&date=<%= row.dateTaken %>">
+                    <span class="material-icons">delete</span>
+                </a>
+            </td>
+        </tr>
+    <% }} %>
+    </table>
+
+
+    <div class="header noBorder">
+        <h1>My appointments</h1>
+        <div>
+            <p>
+                <a class="link" href="/user/addAppointment">Add appointment</a>
+            </p>
+        </div>
+    </div>
+    <% if (myAppointments.length == 0) {%>
+        <p>Whops! No appointments here.</p>
+    <% } else {%>
+    <table>
+        <tr>
+            <th class="left">Name</th>
+            <th class="center">Date & Time</th>
+            <th class="right">Delete</th>
+        </tr>
+    <% for (row of myAppointments) { %>
+        <tr>
+            <td class="left"><%= row.vaccName %></td>
+            <td class="center"><%= row.dateTaken.toLocaleString().slice(0, -3) %></td>
+            <td class="right">
+                <a class="trash" href="/user/deleteAppointment?vacc=<%= row.vaccName %>&date=<%= row.dateTaken %>">
+                    <span class="material-icons">delete</span>
+                </a>
+            </td>
+        </tr>
+    <% }} %>
+    </table>
+</div>
+
+<%- include("footer"); %>

@@ -1,0 +1,24 @@
+<%- include("header"); %>
+<div class="userContainer formsContainer">
+    <h1>Add family member</h1>
+    <% if (error) { %>
+        <div class="error">
+            <p>Something went wrong. Try again.</p>
+        </div>
+    <% } %>
+    <form action="/user/addFamilyMember" method="POST"><br>
+        <p>Name of family member:</p>
+        <input type="text" name="name" maxlength="25" required><br><br>
+        <p>Birthday:</p>
+        <input type="date" name="date" required><br><br>
+        <p>Type of family member:</p>
+        <select name="role">
+            <option value="human">Human</option>
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+        </select><br><br>
+        <input type="submit" value="Add member">
+    </form>
+</div>
+
+<%- include("footer"); %>

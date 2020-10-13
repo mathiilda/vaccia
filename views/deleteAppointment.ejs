@@ -1,0 +1,11 @@
+<%- include("header"); %>
+<div class="userContainer formsContainer">
+    <h1>Delete appointment</h1><br>
+    <form action="/user/deleteAppointment" method="POST">
+        <input type="text" name="vacc" value="<%= vaccine %>" readonly><br><br>
+        <input type="text" name="date" value="<%= date %>" hidden>
+        <input type="submit" value="Delete">
+    </form>
+</div>
+
+<%- include("footer"); %>
