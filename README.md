@@ -5,12 +5,14 @@ Vaccia is a webapplication that helps you keep track of you and your family's (i
 You need MySQL with a root user installed.
 
 ### Instructions
-1. Go to <code>vaccia/sql</code> and run <code>bash mysql.bash</code>. 
+1. Add the .env file (sent to you by email) to the root of the <code>vaccia</code>-folder.
+
+2. Go to <code>vaccia/sql</code> and run <code>bash mysql.bash</code>. 
 This bash-script will setup the database for you. The only thing you need to do is to input your MySQL root-password.
 
-2. Go to the root of the vaccia-folder and run <code>node index.js</code> to start the server.
+3. Go to the root of the vaccia-folder and run <code>node index.js</code> to start the server.
 
-3. Open you webbrowser and go to <code>http://localhost:1337/</code>.
+4. Open you webbrowser and go to <code>http://localhost:1337/</code>.
 
 Then you're done! :-)
 
