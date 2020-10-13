@@ -4,6 +4,8 @@ Vaccia is a webapplication that helps you keep track of you and your family's (i
 ### Before setup
 You need MySQL with a root user installed.
 
+<hr>
+
 ### Instructions
 1. Add the .env file (sent to you by email) to the root of the <code>vaccia</code>-folder.
 
@@ -16,6 +18,7 @@ This bash-script will setup the database for you. The only thing you need to do 
 
 Then you're done! :-)
 
+<hr>
 
 ### Possible issues
 #### Antivirus software
