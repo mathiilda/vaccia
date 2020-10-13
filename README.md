@@ -7,14 +7,16 @@ You need MySQL installed with root user permissions.
 <hr>
 
 ### Instructions
-1. Add the .env file (sent to you by email) to the root of the <code>vaccia</code>-folder.
+1. Add the .env file (sent to you by email) to the root of the <code>vaccia</code>-folder. If the dot is missing from the filename for the env-file, just add it in the beginning of the filename.
 
 2. Go to <code>vaccia/sql</code> and run <code>bash mysql.bash</code>. 
 This bash-script will setup the database for you. The only thing you need to do is to input your MySQL root password.
 
-3. Go to the root of the vaccia-folder and run <code>node index.js</code> to start the server.
+3. Go to the root of the vaccia-folder and run <code>npm install</code>.
 
-4. Open you webbrowser and go to <code>http://localhost:1337/</code>.
+4. Then run <code>node index.js</code> to start the server.
+
+5. Open you webbrowser and go to <code>http://localhost:1337/</code>.
 
 Then you're done! :-)
 
