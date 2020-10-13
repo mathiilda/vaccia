@@ -16,8 +16,8 @@ Then you're done! :-)
 
 
 ### Possible issues
-#### Antivirus
-There's one known issue with the npm-module nodemailer and some antivirus softwares. If you, like me, have AVG installed please open up the AVG application and follow the instructions down below.
+#### Antivirus software
+There's one known issue with the npm-module nodemailer and some antivirus softwares. If you, like me, have AVG installed please open up the AVG application and follow the instructions down below. The process is probably similar for other antivirus softwares.
 
 1. Press the <code>Menu</code>-botton in the right upper corner, then <code>Settings</code>.
 
