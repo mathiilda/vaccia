@@ -3,7 +3,7 @@
     <h1>Delete vaccination</h1><br>
     <form action="/user/deleteVaccination" method="POST">
         <input type="text" name="vacc" value="<%= vaccine %>" readonly><br><br>
-        <input type="text" name="date" value="<%= date.toLocaleString() %>" hidden>
+        <input type="text" name="date" value="<%= date %>" hidden>
         <input type="submit" value="Delete vaccination">
     </form>
 </div>

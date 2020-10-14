@@ -22,7 +22,7 @@ CREATE TABLE family
 (
 	familyId INT NOT NULL,
 	name VARCHAR(50) NOT NULL,
-    birthday DATE NOT NULL,
+    birthday DATETIME NOT NULL,
     email VARCHAR(50) NOT NULL,
     role VARCHAR(20)
 );
@@ -58,5 +58,5 @@ CREATE TABLE taken
 	userEmail VARCHAR(50) NOT NULL,
     userName VARCHAR(50) NOT NULL,
     vaccName VARCHAR(50) NOT NULL,
-    dateTaken DATE NOT NULL
+    dateTaken DATETIME NOT NULL
 )

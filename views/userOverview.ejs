@@ -56,7 +56,7 @@
     <% for (row of myVaccinations) { %>
         <tr>
             <td class="left"><%= row.vaccName %></td>
-            <td class="center"><%= row.dateTaken.toLocaleString().slice(0, -10) %></td>
+            <td class="center"><%= row.dateTaken.toLocaleString('en-GB', { hour12:false }).slice(0,-10) %></td>
             <td class="right">
                 <a class="trash" href="/user/deleteVaccination?vacc=<%= row.vaccName%>&date=<%= row.dateTaken %>">
                     <span class="material-icons">delete</span>
@@ -87,7 +87,7 @@
     <% for (row of myAppointments) { %>
         <tr>
             <td class="left"><%= row.vaccName %></td>
-            <td class="center"><%= row.dateTaken.toLocaleString().slice(0, -3) %></td>
+            <td class="center"><%= row.dateTaken.toLocaleString('en-GB', { hour12:false }) %></td>
             <td class="right">
                 <a class="trash" href="/user/deleteAppointment?vacc=<%= row.vaccName %>&date=<%= row.dateTaken %>">
                     <span class="material-icons">delete</span>

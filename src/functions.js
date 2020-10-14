@@ -276,15 +276,17 @@ async function setReminderAppointment(email, name, vacc) {
     ORDER BY dateTaken DESC`;
 
     let date = await db.query(sql, [email, name, vacc]);
-    let modifyString = date[0].dateTaken.toLocaleString();
-    let dateArr = modifyString.split(", ")
+    var options = { hour12: false };
+    let modifyString = date[0].dateTaken.toLocaleString('en-GB', options);
+    let dateArr = modifyString.toString().split(",");
     let d = dateArr[0].split("/");
     let t = dateArr[1].split(":");
-    let completeDate = new Date(d[2], (d[0]-1), (d[1]-3), t[0], t[1], t[2]);
+    let completeDate = new Date(d[2], (d[0]-1), (d[1]-3), t[0].trim(), t[1], t[2]);
     let prettyDate = `${d[2]}/${d[1]}/${d[0]} - ${t[0]}:${t[1]}:${t[2]}`;
 
     jobs.push(
         schedule.scheduleJob(completeDate, async function() {
+
             let transporter = nodemailer.createTransport({
                 service: "gmail",
                 auth: {
@@ -292,13 +294,22 @@ async function setReminderAppointment(email, name, vacc) {
                 pass: `${process.env.NM_PASS}`,
                 },
             });
-    
-            let info = await transporter.sendMail({
-                from: `"Vaccia" <${process.env.NM_MAIL}>`,
-                to: email,
-                subject: "Reminder | Vaccia",
-                text: `Hello ${name}! \n\nDon't forget about your vaccination appointment for ${vacc}.\nThe appointment is at ${prettyDate}.\n\nBest regards,\nThe Vaccia Team`
-            });
+
+            var htmlMail = `<p>Hello ${name}!</p><p>Don't forget about 
+            your vaccination appointment for
+            ${vacc}.</p>
+            <p>The appointment is at ${prettyDate}.</p>
+            <p>Best regards,</p><p>The Vaccia Team</p>`;
+            
+            if (name.length > 0) {
+                let info = await transporter.sendMail({
+                    from: `"Vaccia" <${process.env.NM_MAIL}>`,
+                    to: email,
+                    subject: "Reminder | Vaccia",
+                    text: "",
+                    html: htmlMail
+                });
+            }
         })
     )
 }

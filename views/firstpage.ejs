@@ -5,7 +5,7 @@
 <% if (first) { %>
     <div class="first">
         <h1>Hello and welcome to Vaccia!</h1>
-        <p>To see your user-information press the user-icon in the right upper corner. If you have questions, scroll down and you will find our Vaccia blog filled with answers about vaccines and vaccinations.</p>
+        <p>To see your userinformation press the usericon in the right upper corner. If you have questions, scroll down and you will find our Vaccia blog filled with answers about vaccines and vaccinations.</p>
     </div>
 <% } %>
     <div class="top">
@@ -29,7 +29,7 @@
             <% for (row of appointments) { %>
                 <tr>
                     <td class="left"><%= row.vaccName %></td>
-                    <td class="center"><%= row.dateTaken.toLocaleString().slice(0, -3) %></td>
+                    <td class="center"><%= row.dateTaken.toLocaleString('en-GB').slice(0, -3) %></td>
                     <td class="right"><%= row.userName %></td>
                 </tr>
             <% }} %>
@@ -63,9 +63,3 @@
 </div>
 
 <%- include("footer"); %>
-<!-- 
-<% if (first) { %>
-    <script>
-        window.alert("Hello and welcome to Vaccia!\n\nThe see your user-information press the user-icon in the right upper corner.\nIf you have questions, scroll down and you will find our Vaccia blog.\nBest regards,\n\nThe Vaccia Team");
-    </script>
-<% } %> -->

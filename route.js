@@ -148,12 +148,13 @@ router.get('/user', urlencodedParser, async (req, res) => {
         let admin = await functions.getAdmin(session.email)
         let vacc = await functions.getPersonalVaccinations(session.email, session.user)
         let appoint = await functions.getAppointments(session.email, session.user);
+        var options = { hour12: false };
 
         let data = {
             username: session.user,
             email: session.email,
             admin: entities.decode(admin[0].name),
-            birthday: entities.decode(info[0].birthday.toLocaleString().slice(0, -10)),
+            birthday: entities.decode(info[0].birthday.toLocaleString('en-GB', options)),
             role: entities.decode(info[0].role),
             family: family,
             myVaccinations: vacc,
