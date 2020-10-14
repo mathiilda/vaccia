@@ -2,7 +2,7 @@
 Vaccia is a web application that helps you keep track of you and your family's (including pets) vaccinations. You can also add you scheduled vaccination appointments and the application will automatically send you reminders 3 days before the appointment. 
 
 ### Before setup
-You need MySQL installed with root user permissions. You also need a Node.js installation with npm included. 
+You need MySQL installed with root user permissions. You also need Node.js installed with npm included. 
 
 <hr>
 
